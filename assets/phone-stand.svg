@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Adjustable phone stand">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#49d4ff"/><stop offset="1" stop-color="#7cf7b5"/></linearGradient></defs>
+  <rect width="600" height="400" rx="46" fill="#0b1b2d"/>
+  <circle cx="480" cy="90" r="120" fill="#49d4ff" opacity=".16"/>
+  <circle cx="110" cy="320" r="100" fill="#7cf7b5" opacity=".16"/>
+  <rect x="220" y="48" width="160" height="260" rx="28" fill="#dce7f4"/>
+  <rect x="238" y="76" width="124" height="198" rx="16" fill="#10243a"/>
+  <circle cx="300" cy="288" r="9" fill="#10243a"/>
+  <path d="M205 326h190l35 34H170z" fill="url(#g)"/>
+  <path d="M258 308h84v24h-84z" fill="#8ba4bc"/>
+</svg>
