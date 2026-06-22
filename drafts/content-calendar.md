@@ -2,49 +2,57 @@
 
 ## Current priority
 
-Get a small number of safe, useful Amazon posts live before scaling. Keep every post simple: problem, product, use case, disclosure, link in bio.
+Build a small set of safe, useful Amazon posts before scaling. Keep every post simple: problem, product, use case, disclosure, link in bio.
 
-## Ready post 1: Gaming finger sleeves
+## Posted products
 
-Status: ready to post manually, or via Meta API once the access token is refreshed.
+1. 30pc gaming finger sleeves + joystick kit
+   - Instagram: https://www.instagram.com/p/DZ2ugJ0jINC/
+   - Landing anchor: https://gotenlica.github.io/easyusefulfinds/#gaming-finger-sleeves
+   - Affiliate link: https://amzn.to/4w0FDoL
+   - Safe angle: low-cost mobile gaming comfort/control upgrade. Avoid promising skill improvement or wins.
 
-Asset:
-https://gotenlica.github.io/easyusefulfinds/assets/gaming-finger-sleeves.jpg
+2. Black Shark magnetic phone cooler
+   - Instagram: https://www.instagram.com/p/DZ5mWF3DNVS/
+   - Landing anchor: https://gotenlica.github.io/easyusefulfinds/#black-shark-phone-cooler
+   - Affiliate link: https://amzn.to/4g0YWcR
+   - Caption file: drafts/instagram-black-shark-phone-cooler.txt
+   - Safe angle: compact phone cooler for longer gaming sessions; avoid exact temperature-drop claims.
 
-Landing page:
-https://gotenlica.github.io/easyusefulfinds/#gaming-finger-sleeves
+3. Lamicall adjustable phone stand
+   - Instagram: https://www.instagram.com/p/DZ5mZ-HDIaJ/
+   - Landing anchor: https://gotenlica.github.io/easyusefulfinds/#lamicall-phone-stand
+   - Affiliate link: https://amzn.to/44mvvuH
+   - Caption file: drafts/instagram-lamicall-phone-stand.txt
+   - Safe angle: simple desk upgrade for videos, calls, charging, and quick gaming breaks.
 
-Caption file:
-drafts/instagram-gaming-finger-sleeves.txt
+4. Anker Nano 47W 2-port charger
+   - Instagram: https://www.instagram.com/p/DZ5mdznDP7Y/
+   - Landing anchor: https://gotenlica.github.io/easyusefulfinds/#anker-nano-charger
+   - Affiliate link: https://amzn.to/4aIl08E
+   - Caption file: drafts/instagram-anker-nano-charger.txt
+   - Safe angle: compact two-device charger; avoid unsupported charging-speed claims.
 
-Safe angle:
-Low-cost mobile gaming comfort/control upgrade. Avoid promising skill improvement or wins.
+## Live on hub, not yet posted as static Instagram product post
 
-## Next products to add when Freddy creates SiteStripe links
-
-1. Adjustable phone stand
-   - Angle: keeps phone upright for calls, videos, charging, desk use.
-   - Good visual: messy desk before / stand after.
-   - Caption hook: "Tiny desk upgrade that stops your phone lying flat all day."
-
-2. Cable organizer clips
-   - Status: link added to site: https://amzn.to/3QWaXpO
+1. 8pc cable organizer clips
+   - Link added to site: https://amzn.to/3QWaXpO
    - Landing anchor: https://gotenlica.github.io/easyusefulfinds/#cable-organizer-clips
    - Draft caption: drafts/instagram-cable-organizer-clips.txt
    - Angle: stops charging cables falling behind desk/bedside table.
-   - Good visual: cable dangling off table vs clipped in place.
-   - Caption hook: "The cheapest fix for cables disappearing behind the desk."
    - Caution: avoid repeating the listing's "magnetic" claim too strongly because one review says the clips may be spring-loaded rather than magnetic.
 
-3. Short USB-C cable pack or 100W cable
+## Future product ideas
+
+1. Short USB-C cable pack or 100W cable
    - Angle: travel/desk backup cable, less cable mess.
    - Reject if sales page makes unsafe charging claims.
 
-4. Screen-cleaning kit
+2. Screen-cleaning kit
    - Angle: clean phone/laptop/tablet screens.
    - Avoid germ/medical claims.
 
-5. Mini desk vacuum
+3. Mini desk vacuum
    - Angle: keyboard crumbs and desk dust.
    - Good visual demo.
 
@@ -58,7 +66,8 @@ Do not post more aggressively until the account has normal activity and token/AP
 
 ## Compliance reminders
 
-- Include "Affiliate link may be used" or equivalent on promotional posts.
+- Use real product listing photos for product posts; do not use generated/illustration images as product photos.
+- Include "As an Amazon Associate I earn from qualifying purchases" or equivalent disclosure on promotional posts.
 - Keep Amazon disclosure visible on the landing page.
 - Use the link hub, not raw Amazon affiliate links in every caption.
 - Avoid income, health, medical, or guaranteed-result claims.
