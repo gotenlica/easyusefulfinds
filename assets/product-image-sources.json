@@ -26,5 +26,13 @@
     "image_url": "https://m.media-amazon.com/images/I/61cn6bcP+LL._AC_SL1200_.jpg",
     "file": "assets/cable-organizer-clips.jpg",
     "bytes": 93728
+  },
+  "led-desk-lamp-usb": {
+    "name": "LED desk lamp with wireless charging and USB port",
+    "source": "https://www.amazon.com/Wireless-Suitable-Thermometer-Automatic-Lamp-Black/dp/B08QCFV6ZJ",
+    "affiliate_link": "https://amzn.to/44quB0c",
+    "image_url": "https://m.media-amazon.com/images/I/716kPuVMjiL._AC_SL1200_.jpg",
+    "file": "assets/led-desk-lamp-usb.jpg",
+    "bytes": 103146
   }
 }
