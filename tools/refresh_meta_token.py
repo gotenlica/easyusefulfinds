@@ -123,6 +123,7 @@ def main() -> int:
     parser.add_argument("--app-id")
     parser.add_argument("--app-secret")
     parser.add_argument("--short-lived-token")
+    parser.add_argument("--long-lived-user-token", help="Already-extended User token from Meta Access Token Debugger; skips app-secret exchange.")
     parser.add_argument("--page-id")
     parser.add_argument("--graph-version")
     parser.add_argument("--dry-run", action="store_true", help="Validate and print non-secret summary without writing meta.env.")
@@ -131,46 +132,59 @@ def main() -> int:
     env_path = Path(args.env_file).expanduser()
     env_values = load_env(env_path)
     version = args.graph_version or os.getenv("META_GRAPH_VERSION") or env_values.get("META_GRAPH_VERSION") or "v20.0"
-    app_id = require("META_APP_ID", args.app_id, env_values)
-    app_secret = require("META_APP_SECRET", args.app_secret, env_values, secret=True)
-    short_token = require("META_SHORT_LIVED_TOKEN", args.short_lived_token, env_values, secret=True)
+    app_id = args.app_id or os.getenv("META_APP_ID") or env_values.get("META_APP_ID") or ""
+    app_secret = args.app_secret or os.getenv("META_APP_SECRET") or env_values.get("META_APP_SECRET") or ""
+    short_token = args.short_lived_token or os.getenv("META_SHORT_LIVED_TOKEN") or env_values.get("META_SHORT_LIVED_TOKEN") or ""
+    supplied_long_token = args.long_lived_user_token or os.getenv("META_LONG_LIVED_USER_TOKEN") or env_values.get("META_LONG_LIVED_USER_TOKEN") or ""
     desired_page_id = args.page_id or os.getenv("META_PAGE_ID") or env_values.get("META_PAGE_ID") or ""
-    app_access_token = f"{app_id}|{app_secret}"
 
-    print("Checking Meta app credentials...")
-    try:
-        app = graph(version, "GET", "app", {"access_token": app_access_token})
-        print(f"OK app: {app.get('name', '<unnamed>')} ({app.get('id', app_id)})")
-    except RuntimeError as exc:
-        print("App credential check failed. META_APP_ID and META_APP_SECRET do not validate together.", file=sys.stderr)
-        print(str(exc), file=sys.stderr)
-        return 2
+    if supplied_long_token:
+        print("Using supplied long-lived User token; skipping app-secret exchange.")
+        long_user_token = supplied_long_token.strip()
+    else:
+        if not app_id:
+            raise SystemExit(f"Missing META_APP_ID. Add it to {env_path} or pass --app-id.")
+        if not app_secret:
+            app_secret = require("META_APP_SECRET", args.app_secret, env_values, secret=True)
+        if not short_token:
+            short_token = require("META_SHORT_LIVED_TOKEN", args.short_lived_token, env_values, secret=True)
+        app_access_token = f"{app_id}|{app_secret}"
 
-    print("Exchanging short-lived user token for long-lived user token...")
-    try:
-        exchanged = graph(
-            version,
-            "GET",
-            "oauth/access_token",
-            {
-                "grant_type": "fb_exchange_token",
-                "client_id": app_id,
-                "client_secret": app_secret,
-                "fb_exchange_token": short_token,
-            },
-        )
-    except RuntimeError as exc:
-        print("Token exchange failed. Generate a fresh User token from the same Meta app, then rerun.", file=sys.stderr)
-        print(str(exc), file=sys.stderr)
-        return 3
+        print("Checking Meta app credentials...")
+        try:
+            app = graph(version, "GET", "app", {"access_token": app_access_token})
+            print(f"OK app: {app.get('name', '<unnamed>')} ({app.get('id', app_id)})")
+        except RuntimeError as exc:
+            print("App credential check failed. META_APP_ID and META_APP_SECRET do not validate together.", file=sys.stderr)
+            print("Alternative: use Meta Access Token Debugger to Extend Access Token, save it as META_LONG_LIVED_USER_TOKEN, then rerun this script.", file=sys.stderr)
+            print(str(exc), file=sys.stderr)
+            return 2
 
-    long_user_token = exchanged.get("access_token")
-    if not long_user_token:
-        print("Meta did not return a long-lived access_token.", file=sys.stderr)
-        return 4
+        print("Exchanging short-lived user token for long-lived user token...")
+        try:
+            exchanged = graph(
+                version,
+                "GET",
+                "oauth/access_token",
+                {
+                    "grant_type": "fb_exchange_token",
+                    "client_id": app_id,
+                    "client_secret": app_secret,
+                    "fb_exchange_token": short_token,
+                },
+            )
+        except RuntimeError as exc:
+            print("Token exchange failed. Generate a fresh User token from the same app, then rerun.", file=sys.stderr)
+            print(str(exc), file=sys.stderr)
+            return 3
 
-    debug = graph(version, "GET", "debug_token", {"input_token": long_user_token, "access_token": app_access_token}).get("data", {})
-    print(f"Long-lived user token valid: {debug.get('is_valid')} expires: {exp_to_text(debug.get('expires_at'))}")
+        long_user_token = exchanged.get("access_token")
+        if not long_user_token:
+            print("Meta did not return a long-lived access_token.", file=sys.stderr)
+            return 4
+
+        debug = graph(version, "GET", "debug_token", {"input_token": long_user_token, "access_token": app_access_token}).get("data", {})
+        print(f"Long-lived user token valid: {debug.get('is_valid')} expires: {exp_to_text(debug.get('expires_at'))}")
 
     print("Finding connected Facebook Page and Instagram business account...")
     accounts = graph(
@@ -202,7 +216,7 @@ def main() -> int:
         version,
         "GET",
         str(ig["id"]),
-        {"fields": "id,username,account_type,media_count", "access_token": page_token},
+        {"fields": "id,username,media_count", "access_token": page_token},
     )
     print(f"Verified Instagram API access: @{account.get('username')} media_count={account.get('media_count')}")
 
