@@ -88,7 +88,7 @@ def main() -> int:
         account = graph_get(
             ig_user_id,
             {
-                "fields": "id,username,account_type,media_count",
+                "fields": "id,username,media_count",
                 "access_token": access_token,
             },
         )
