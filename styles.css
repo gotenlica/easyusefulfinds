@@ -35,17 +35,22 @@ body {
 }
 
 .avatar {
-  width: 84px;
-  height: 84px;
+  width: 96px;
+  height: 96px;
   margin: 0 auto 18px;
   display: grid;
   place-items: center;
-  border-radius: 28px;
-  font-weight: 900;
-  letter-spacing: -0.08em;
-  color: #05111d;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .eyebrow {
