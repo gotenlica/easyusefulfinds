@@ -1,0 +1,30 @@
+{
+  "black-shark-phone-cooler": {
+    "name": "Black Shark FunCooler 5 Magnetic phone cooler",
+    "source": "https://www.amazon.com/Black-Shark-FunCooler-Magnetic-Cellphone/dp/B0F4D7M75J",
+    "image_url": "https://m.media-amazon.com/images/I/71CNe6nK1hL._AC_SL1200_.jpg",
+    "file": "assets/black-shark-phone-cooler.jpg",
+    "bytes": 114747
+  },
+  "lamicall-phone-stand": {
+    "name": "Lamicall adjustable phone stand",
+    "source": "https://www.amazon.com/Lamicall-Adjustable-Cell-Phone-Stand/dp/B08JPWZPBC",
+    "image_url": "https://m.media-amazon.com/images/I/61dG5qk602L._AC_SL1200_.jpg",
+    "file": "assets/lamicall-phone-stand.jpg",
+    "bytes": 74613
+  },
+  "anker-nano-charger": {
+    "name": "Anker Nano 47W 2-port USB-C charger",
+    "source": "https://www.amazon.com/Anker-Charger-Compact-Foldable-Charging/dp/B0BRPXCKLB",
+    "image_url": "https://m.media-amazon.com/images/I/61Nc6zDK4GL._AC_SL1200_.jpg",
+    "file": "assets/anker-nano-charger.jpg",
+    "bytes": 51544
+  },
+  "cable-organizer-clips": {
+    "name": "Cable organizer clips",
+    "source": "https://amzn.to/3QWaXpO",
+    "image_url": "https://m.media-amazon.com/images/I/61cn6bcP+LL._AC_SL1200_.jpg",
+    "file": "assets/cable-organizer-clips.jpg",
+    "bytes": 93728
+  }
+}
