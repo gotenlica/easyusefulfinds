@@ -33,6 +33,13 @@ Build a small set of safe, useful Amazon posts before scaling. Keep every post s
    - Caption file: drafts/instagram-anker-nano-charger.txt
    - Safe angle: compact two-device charger; avoid unsupported charging-speed claims.
 
+5. LED desk lamp with wireless charger
+   - Instagram: https://www.instagram.com/p/DZ5n8yWjMN9/
+   - Landing anchor: https://gotenlica.github.io/easyusefulfinds/#led-desk-lamp-usb
+   - Affiliate link: https://amzn.to/44quB0c
+   - Caption file: drafts/instagram-led-desk-lamp-usb.txt
+   - Safe angle: multi-use desk lamp with charging/display features; avoid unsupported sleep/health/productivity claims.
+
 ## Live on hub, not yet posted as static Instagram product post
 
 1. 8pc cable organizer clips
