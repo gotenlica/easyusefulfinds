@@ -52,7 +52,14 @@ def graph_post(path: str, params: dict[str, str]) -> dict:
 def require_env(name: str) -> str:
     value = os.getenv(name, "").strip()
     if not value:
-        raise SystemExit(f"Missing required environment variable: {name}")
+        raise SystemExit(
+            f"Missing required environment variable: {name}\n"
+            "Load ~/.hermes/secrets/meta.env first:\n"
+            "  set -a; . ~/.hermes/secrets/meta.env; set +a\n"
+            "If META_IG_USER_ID or META_PAGE_ACCESS_TOKEN is not in that file yet, "
+            "run tools/refresh_meta_token.py after fixing META_APP_ID, META_APP_SECRET, "
+            "and META_SHORT_LIVED_TOKEN."
+        )
     return value
 
 
