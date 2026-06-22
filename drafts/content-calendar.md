@@ -27,10 +27,14 @@ Low-cost mobile gaming comfort/control upgrade. Avoid promising skill improvemen
    - Good visual: messy desk before / stand after.
    - Caption hook: "Tiny desk upgrade that stops your phone lying flat all day."
 
-2. Magnetic cable organizer clips
+2. Cable organizer clips
+   - Status: link added to site: https://amzn.to/3QWaXpO
+   - Landing anchor: https://gotenlica.github.io/easyusefulfinds/#cable-organizer-clips
+   - Draft caption: drafts/instagram-cable-organizer-clips.txt
    - Angle: stops charging cables falling behind desk/bedside table.
    - Good visual: cable dangling off table vs clipped in place.
    - Caption hook: "The cheapest fix for cables disappearing behind the desk."
+   - Caution: avoid repeating the listing's "magnetic" claim too strongly because one review says the clips may be spring-loaded rather than magnetic.
 
 3. Short USB-C cable pack or 100W cable
    - Angle: travel/desk backup cable, less cable mess.
